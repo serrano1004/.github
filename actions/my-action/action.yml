@@ -1,0 +1,12 @@
+name: 'Mi Acción'
+description: 'Una acción que ejecuta un script de shell'
+inputs:
+  mensaje:
+    description: 'El mensaje que se va a imprimir'
+    required: true
+    default: 'Hola, en mi action'
+runs:
+  using: 'docker'
+  image: 'Dockerfile'
+  args:
+    - ${{ inputs.mensaje }}
